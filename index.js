@@ -1,24 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { List } from './List';
 
 class App extends React.Component {
+	// constructor method begins here:
+  constructor(props) {
+    super(props);
+    this.state = { title: 'Best App' };
+  }
+	
   render() {
     return (
-      <div>
-        <List type='Living Musician'>
-          <li>Sachiko M</li>
-          <li>Harvey Sid Fisher</li>
-        </List>
-        <List type='Living Cat Musician'>
-          <li>Nora the Piano Cat</li>
-        </List>
-      </div>
+      <h1>
+        {this.state.title}
+      </h1>
     );
   }
 }
 
 ReactDOM.render(
-  <App />, 
+  <App />,
   document.getElementById('root')
 );

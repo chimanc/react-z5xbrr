@@ -1,23 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class App extends React.Component {
-	// constructor method begins here:
+class Mood extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { title: 'Best App' };
+    this.state = { mood: 'good' };
+    this.toggleMood = this.toggleMood.bind(this);
   }
-	
+
+  toggleMood() {
+    const newMood = this.state.mood == 'good' ? 'bad' : 'good';
+    this.setState({ mood: newMood });
+  }
+
   render() {
     return (
-      <h1>
-        {this.state.title}
-      </h1>
+      <div>
+        <h1>I'm feeling {this.state.mood}!</h1>
+        <button onClick={this.toggleMood}>
+          Click Me
+        </button>
+      </div>
     );
   }
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Mood />, document.getElementById('root'));

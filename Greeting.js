@@ -11,4 +11,3 @@ export class Greeting extends React.Component {
   }
 }
 
-Hello

@@ -1,22 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from './Button';
+import { List } from './List';
 
-class Talker extends React.Component {
-  talk() {
-    let speech = '';
-    for (let i = 0; i < 10000; i++) {
-      speech += 'blah ';
-    }
-    alert(speech);
-  }
-  
+class App extends React.Component {
   render() {
-    return <Button talk={this.talk}/>;
+    return (
+      <div>
+        <List type='Living Musician'>
+          <li>Sachiko M</li>
+          <li>Harvey Sid Fisher</li>
+        </List>
+        <List type='Living Cat Musician'>
+          <li>Nora the Piano Cat</li>
+        </List>
+      </div>
+    );
   }
 }
 
 ReactDOM.render(
-  <Talker />,
-  document.getElementById('root')
+  <App />, 
+  document.getElementById('app')
 );

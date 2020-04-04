@@ -1,82 +1,107 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//NOT IF statement inside JSX//
-/*
-function coinToss() {
-  // This function will randomly return either 'heads' or 'tails'.
-  return Math.random() < 0.5 ? 'heads' : 'tails';
-}
+const people = ['Rowe', 'Prevost', 'Gare'];
 
-const pics = {
-  kitty: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-kitty.jpg',
-  doggy: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-puppy.jpeg'
-};
+const peopleLis = people.map(person =>
+  // expression goes here:
+  <li>{person}</li>);
+);
 
-let img;
-
-var f=coinToss();
-console.log(`this is f ${f}`);
-
-var c = coinToss();
-console.log(`this is c ${c}`);
-
-// if/else statement begins here:
-if (coinToss()=== 'heads')
-  {
-    img = <img src={pics.kitty} />;
-  }
-else 
-  {
-    img = <img src={pics.doggy} />;
-  }
-
-ReactDOM.render(img,document.getElementById('app'))
-*/
-
-//Example 2//
-
-
-function coinToss () {
-  // Randomly return either 'heads' or 'tails'.
-  return Math.random() < 0.5 ? 'heads' : 'tails';
-}
-
-const pics = {
-  kitty: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-kitty.jpg',
-  doggy: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-puppy.jpeg'
-};
-
-const result = coinToss() == 'heads' ? 'kitty' : 'doggy'
-
-const img = <img src= {pics[result]}/>;
-               
+// ReactDOM.render goes here:
 ReactDOM.render(
-	img, 
-	document.getElementById('app')
+  <ul>{peopleLis}</ul>,
+  document.getElementById('app')
 );
 
-//Example 3//
-//If the conditionis before the && is "TRUE",then return anything after the &&
+//Arrow Function//
 /*
-// judgmental will be true half the time.
-const judgmental = Math.random() < 0.5;
-console.log(judgmental);
+ar elements = [
+  'Hydrogen',
+  'Helium',
+  'Lithium',
+  'Beryllium'
+];
 
-const favoriteFoods = (
-  <div>
-    <h1>My Favorite Foods</h1>
-    <ul>
-      <li>Sushi Burrito</li>
-      <li>Rhubarb Pie</li>
-      { !judgmental && <li>Nacho Cheez Straight Out The Jar</li>}
-      <li>Broiled Grapefruit</li>
-    </ul>
-  </div>
-);
+// This statement returns the array: [8, 6, 7, 9]
+elements.map(function(element) {
+  return element.length;
+});
 
-ReactDOM.render(
-	favoriteFoods, 
-	document.getElementById('app')
-);
+// The regular function above can be written as the arrow function below
+elements.map((element) => {
+  return element.length;
+}); // [8, 6, 7, 9]
+
+// When there is only one parameter, we can remove the surrounding parentheses
+elements.map(element => {
+  return element.length;
+}); // [8, 6, 7, 9]
+
+// When the only statement in an arrow function is `return`, we can remove `return` and remove
+// the surrounding curly brackets
+elements.map(element => element.length); // [8, 6, 7, 9]
+
+// In this case, because we only need the length property, we can use destructuring parameter:
+// Notice that the `length` corresponds to the property we want to get whereas the
+// obviously non-special `lengthFooBArX` is just the name of a variable which can be changed
+// to any valid variable name you want
+elements.map(({ length: lengthFooBArX }) => lengthFooBArX); // [8, 6, 7, 9]
+
+// This destructuring parameter assignment can also be written as seen below. However, note that in
+// this example we are not assigning `length` value to the made up property. Instead, the literal name
+// itself of the variable `length` is used as the property we want to retrieve from the object.
+elements.map(({ length }) => length); // [8, 6, 7, 9] 
+
+
+
+
+//How Variable is declared//
+
+Refer to: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring
+
+let a, b, rest;
+[a, b] = [10, 20];
+console.log(a); // 10
+console.log(b); // 20
+
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+console.log(a); // 10
+console.log(b); // 20
+console.log(rest); // [30, 40, 50]
+
+({ a, b } = { a: 10, b: 20 });
+console.log(a); // 10
+console.log(b); // 20
+
+
+// Stage 4(finished) proposal
+({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40});
+console.log(a); // 10
+console.log(b); // 20
+console.log(rest); // {c: 30, d: 40}
+
+
+
+//Expressions - Destructuring assignment
+const foo = ['one', 'two', 'three'];
+const [red, yellow, green] = foo;
+console.log(red); // "one"
+console.log(yellow); // "two"
+console.log(green); // "three"
+
+let a, b;
+
+[a, b] = [1, 2];
+console.log(a); // 1
+console.log(b); // 2
+
+
+const o = {p: 42, q: true};
+const {p: foo, q: bar} = o;
+ 
+console.log(foo); // 42 
+console.log(bar); // true
+
+
 */

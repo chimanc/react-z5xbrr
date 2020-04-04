@@ -32,3 +32,14 @@ else
   }
 
 ReactDOM.render(img,document.getElementById('app'))
+
+
+//Example 2//
+/*
+const img = <img src={pics[coinToss() == 'heads' ? 'kitty' : 'doggy']} />;
+               
+ReactDOM.render(
+	img, 
+	document.getElementById('app')
+);
+*/

@@ -1,23 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+//NOT IF statement inside JSX//
 
-//Example 1//
-function makeDoggy(e) {
-  // Call this extremely useful function on an <img>.
-  // The <img> will become a picture of a doggy.
-  e.target.setAttribute('src', 'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-puppy.jpeg');
-  e.target.setAttribute('alt', 'doggy');
+function coinToss() {
+  // This function will randomly return either 'heads' or 'tails'.
+  return Math.random() < 0.5 ? 'heads' : 'tails';
 }
 
-const kitty = (
-	<img 
-		src="https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-kitty.jpg" 
-		alt="kitty" 
-    onClick = {makeDoggy}
-    />
-);
+const pics = {
+  kitty: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-kitty.jpg',
+  doggy: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-puppy.jpeg'
+};
 
-ReactDOM.render(kitty, document.getElementById('app'));
-////////////////
+let img;
 
+var f=coinToss();
+console.log(`this is f ${f}`);
+
+var c = coinToss();
+console.log(`this is c ${c}`);
+
+// if/else statement begins here:
+if (coinToss()=== 'heads')
+  {
+    img = <img src={pics.kitty} />;
+  }
+else 
+  {
+    img = <img src={pics.doggy} />;
+  }
+
+ReactDOM.render(img,document.getElementById('app'))

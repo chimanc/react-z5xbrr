@@ -3,16 +3,33 @@ import ReactDOM from 'react-dom';
 
 const people = ['Rowe', 'Prevost', 'Gare'];
 
+
+//Example 1//
+/*
 const peopleLis = people.map(person =>
-  // expression goes here:
+
   <li>{person}</li>);
 );
+*/
+
+//Example 2 KEY//
+
+const peopleLis = people.map((person, i) =>
+  // expression goes here:
+    <li key={'a_${i+1}'}>{person} {`a_${i+1}`} </li>
+  );
 
 // ReactDOM.render goes here:
 ReactDOM.render(
   <ul>{peopleLis}</ul>,
   document.getElementById('app')
 );
+
+//NOTE: Templat Literal JS String can be `Hello ${1+2}!` and expected outcome would be Hello 3! 
+
+
+
+
 
 //Arrow Function//
 /*

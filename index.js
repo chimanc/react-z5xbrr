@@ -55,3 +55,28 @@ ReactDOM.render(
 	img, 
 	document.getElementById('app')
 );
+
+//Example 3//
+//If the conditionis before the && is "TRUE",then return anything after the &&
+/*
+// judgmental will be true half the time.
+const judgmental = Math.random() < 0.5;
+console.log(judgmental);
+
+const favoriteFoods = (
+  <div>
+    <h1>My Favorite Foods</h1>
+    <ul>
+      <li>Sushi Burrito</li>
+      <li>Rhubarb Pie</li>
+      { !judgmental && <li>Nacho Cheez Straight Out The Jar</li>}
+      <li>Broiled Grapefruit</li>
+    </ul>
+  </div>
+);
+
+ReactDOM.render(
+	favoriteFoods, 
+	document.getElementById('app')
+);
+*/

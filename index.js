@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 //NOT IF statement inside JSX//
-
+/*
 function coinToss() {
   // This function will randomly return either 'heads' or 'tails'.
   return Math.random() < 0.5 ? 'heads' : 'tails';
@@ -32,14 +32,26 @@ else
   }
 
 ReactDOM.render(img,document.getElementById('app'))
-
+*/
 
 //Example 2//
-/*
-const img = <img src={pics[coinToss() == 'heads' ? 'kitty' : 'doggy']} />;
+
+
+function coinToss () {
+  // Randomly return either 'heads' or 'tails'.
+  return Math.random() < 0.5 ? 'heads' : 'tails';
+}
+
+const pics = {
+  kitty: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-kitty.jpg',
+  doggy: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-puppy.jpeg'
+};
+
+const result = coinToss() == 'heads' ? 'kitty' : 'doggy'
+
+const img = <img src= {pics[result]}/>;
                
 ReactDOM.render(
 	img, 
 	document.getElementById('app')
 );
-*/

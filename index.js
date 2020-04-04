@@ -2,6 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 ReactDOM.render(
-  <h1>Basic Template</h1>,
+  <h1>{2 + 3}</h1>,
   document.getElementById('app')
 );

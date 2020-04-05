@@ -19,3 +19,5 @@ ReactDOM.render(
 
 //Another way to create Component instance 
 // <MyComponentClass></MyComponentClass>
+
+//NOTE ReactDOM.render method can only accept one value, therefore if need you need to render 2 component, you may need to wrap it in <div>, such as <dvi> <ComponentOne /> <ComponentTwo /> </div>

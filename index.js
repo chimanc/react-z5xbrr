@@ -16,3 +16,6 @@ ReactDOM.render(
   <MyComponentClass />, 
   document.getElementById('app')
 );
+
+//Another way to create Component instance 
+// <MyComponentClass></MyComponentClass>

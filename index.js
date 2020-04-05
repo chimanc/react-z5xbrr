@@ -39,5 +39,23 @@ ReactDOM.render(
 
 In the above example, the line with the const n declaration will cause a syntax error, as is it should not be part of the class declaration itself, but should occur in a method like render().
 
+However, it would be okay to delare the variable outside the render method and still get it access for the method, e.g
+const fiftyFifty = Math.random() < 0.5;
+
+// New component class starts here:
+class TonightsPlan extends React.Component {
+  render() {
+    let text;
+    if (fiftyFifty)
+      text = <h1>Tonight I'm going out WOOO</h1>
+    else
+      text = <h1>Tonight I'm going to bed WOOO</h1> 
+        
+    return(
+      <div>{text}</div>
+    );
+  }
+};
+
 
 */

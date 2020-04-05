@@ -25,3 +25,19 @@ ReactDOM.render(
 // <MyComponentClass></MyComponentClass>
 
 //NOTE ReactDOM.render method can only accept one value, therefore if need you need to render 2 component, you may need to wrap it in <div>, such as <dvi> <ComponentOne /> <ComponentTwo /> </div>
+
+/*
+  Watch out for this common mistake
+  class Random extends React.Component {
+  // This should be in the render function:
+  const n = Math.floor(Math.random() * 10 + 1);
+
+  render() {
+    return <h1>The number is {n}!</h1>;
+  }
+};
+
+In the above example, the line with the const n declaration will cause a syntax error, as is it should not be part of the class declaration itself, but should occur in a method like render().
+
+
+*/

@@ -20,3 +20,8 @@ ReactDOM.render(
   <ProfilePage />,
   document.getElementById('app')
 );
+
+/*
+When you use React.js, every JavaScript file in your application is invisible to every other JavaScript file by default. ProfilePage.js and NavBar.js can’t see each other.
+
+*/

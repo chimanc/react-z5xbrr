@@ -43,3 +43,10 @@ ReactDOM.render(
   document.getElementById('app')
 );
 */
+
+//Prop vs Props
+/*
+props is the name of the object that stores passed-in information. this.props refers to that storage object. At the same time, each piece of passed-in information is called a prop. This means that props could refer to two pieces of passed-in information, or it could refer to the object that stores those pieces of information
+*/
+
+/*Pass props From Component To Component

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Greeting} from './Greeting';
+import { Greeting } from './Greeting';
 
 class App extends React.Component {
   render() {
@@ -9,10 +9,12 @@ class App extends React.Component {
         <h1>
           Hullo and, "Welcome to The Newzz," "On Line!"
         </h1>
-        <Greeting name = 'Chris' />
-        
+        <h1>
+          {this.props.firstName}
+        </h1>
+        <Greeting name={this.props.firstName} signedIn={true}/>
         <article>
-          Latest newzz:  where is my phone?
+          Latest:  where is my phone?
         </article>
       </div>
     );
@@ -20,6 +22,10 @@ class App extends React.Component {
 }
 
 ReactDOM.render(
-  <App />, 
+  <App firstName="MEME"/>, 
   document.getElementById('app')
 );
+
+/* You can pass first pass in props from ReactDOM render method to App Component then to Greeting Component
+
+*/

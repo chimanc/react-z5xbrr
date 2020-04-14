@@ -15,7 +15,8 @@ class PropsDisplayer extends React.Component {
 }
 
 // ReactDOM.render goes here:
-ReactDOM.render(<PropsDisplayer abc='Hello'/>, document.getElementById('app'));
+// You can pass information to a React component, ie. Set an attribute name for a Compoenent and assign value to it
+ReactDOM.render(<PropsDisplayer abc='Hello'/>, document.getElementById('app')); 
 
 
 /*
